@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
 
 class LoginRegisterController extends Controller
 {
@@ -83,7 +84,7 @@ class LoginRegisterController extends Controller
         if(Auth::attempt($credentials))
         {
             $request->session()->regenerate();
-            return redirect()->route('dashboard')
+            return redirect()->route('home')
                 ->withSuccess('You have successfully logged in!');
         }
 
@@ -102,7 +103,12 @@ class LoginRegisterController extends Controller
     {
         if(Auth::check())
         {
-            return view('auth.dashboard');
+            $teamsCount = DB::table('voters')->count();
+        $compititionsCount = DB::table('compititions')->count();
+        $playersCount = DB::table('players')->count();
+        $votersCount = DB::table('voters')->count();
+
+        return view('auth.dashboard', compact('teamsCount','compititionsCount', 'playersCount', 'votersCount'));
         }
         
         return redirect()->route('login')
