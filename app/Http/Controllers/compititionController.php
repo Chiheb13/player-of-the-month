@@ -57,7 +57,7 @@ public function updatecompitition(Request $request, $id)
         'name' => 'required',
         'date_debut' => 'required|date',
         'date_fin' => 'required|date|after:date_debut',
-        'player_id' => 'required|array|min:5|exists:players,id',
+        
     ]);
 
     $competition = Compitition::find($id);
@@ -67,7 +67,7 @@ public function updatecompitition(Request $request, $id)
     $competition->save();
 
 
-    $competition->players()->sync($request->player_id);
+    
 
     return redirect()->route('showcompititiontable')->with('success', 'Competition updated successfully.');
 }

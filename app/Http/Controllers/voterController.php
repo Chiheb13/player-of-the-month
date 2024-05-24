@@ -42,7 +42,7 @@ class VoterController extends Controller
         ->select('players.*', 'player_compitition.note')
         ->orderByDesc('player_compitition.note')
         ->get();
-
+        
     return view('compitition.results', compact('players', 'competition'));
     }
 

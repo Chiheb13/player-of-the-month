@@ -42,25 +42,25 @@
       @endforeach
       
     </div>
-    <div class="container" >
+    <div class="container ml"  >
       <div class="row justify-content-center mt-4">
-          <div class="col-md-6" style="margin-left: -780px; margin-top: -70px;"><br>
+          <div class="col-md-6" style="margin-left: -600px; margin-top: -90px;"><br>
               
               
                   <div class="form-group">
                       <label for="name" style="color: black;">Name</label>
-                      <input type="text" name="name" class="form-control col-8" id="name">
+                      <input type="text" name="name" class="form-control col-6" id="name">
                   </div>
                   <div class="mb-3">
                       <label for="phone" class="form-label" style="color: black;">Phone</label>
                       <div class="input-group">
-                          <input type="tel" name="phone" class="form-control col-8" id="phone" placeholder="Enter your phone">
+                          <input type="tel" name="phone" class="form-control col-6" id="phone" placeholder="Enter your phone">
                       </div>
                   </div>
                   @error('phone')
                       <span class="text-danger h5">{{ $message }}</span>
                   @enderror
-                  <input name="add" class="btn btn-success btn-block col-8" type="submit" value="Create Voter">
+                  <input name="add" class="btn btn-success btn-block col-6" type="submit" value="Create Voter">
               
           </div>
       </div>

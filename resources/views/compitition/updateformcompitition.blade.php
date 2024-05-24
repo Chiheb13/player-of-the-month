@@ -48,23 +48,8 @@
                 <label for="inputClientCompany">date_fin</label>
                 <input type="date" name="date_fin" value={{$data['date_fin'] }} id="inputClientCompany" class="form-control">
               </div>
-              <div class="form-group">
-                <label for="inputEquipe">active status</label>
-                <select class="form-control" name="is_activated">
-                    <option selected disabled value="{{$data['is_activated'] }}">{{$data['is_activated'] }}</option>
-                    <option value="0">active</option>
-                    <option value="1">disactivate</option>
-                </select>
-            </div>
-            <div class="form-group">
-              <label>Players</label>
-              <select  class="select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;" name="player_id[]">
-                  @foreach($players as $player)
-                  
-                  <option value="{{ $player->id }}">{{ $player->name }}</option>
-                  @endforeach
-              </select>
-          </div>
+              
+            
               
             </div>
             <!-- /.card-body -->

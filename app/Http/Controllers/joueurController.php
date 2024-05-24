@@ -10,8 +10,9 @@ class joueurController extends Controller
 {
     public function afficheplayer()
 {
-    $data = DB::table('players')->get();//query builder
-    return view('player.playertable', compact('data'));
+    $data = Player::with('equipe')->get();
+    return view('player.playertable', compact('data'));//query builder
+    
 }
 public function addplayer()
 {

@@ -68,7 +68,7 @@
                           post player
                       </th>
                       <th style="width: 30%">
-                       equipe_id
+                       team Name
                     </th>
                     <th style="width: 30%">
                         player picture
@@ -93,7 +93,7 @@
                         {{$info->postplayer}}
                       </td>
                       <td>
-                        {{$info->equipe_id}}
+                        {{$info->equipe->name}}
                       </td>
                       <td><img src="uploads/{{ $info->image }}" style="width:70px;height:50px;" alt=""></td>
                     </td>

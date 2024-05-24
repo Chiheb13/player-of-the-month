@@ -31,7 +31,7 @@ class equipeController extends Controller
     public function showtableequipe()
 {
     //$data = DB::table('equipes')->get();//query builder
-    $data=equipe::select("*")->get();
+    $data=equipe::select("*")->get();//elequent model
     return view('equipe.tableequipe', compact('data'));
 }
 public function edit($id){
